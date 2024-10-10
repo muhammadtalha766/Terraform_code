@@ -1,0 +1,7 @@
+## Running the Application with Docker Compose
+
+You can build and run the application in detached mode using Docker Compose. Simply copy the command below and run it in your terminal.
+
+### Command:
+```bash
+docker-compose up -d --build
