@@ -7,7 +7,7 @@ provider "aws" {
 #resurce block
 resource "aws_instance" "first_instance" {
     ami = "ami-04cdc91e49cb06165"
-    instance_type = "t3.micro"
+    instance_type = "t3.large"
     #security group attach
     vpc_security_group_ids = [ aws_security_group.first_security_group.id ]
     key_name = "ansible key pair"
