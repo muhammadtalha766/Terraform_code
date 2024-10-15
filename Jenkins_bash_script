@@ -1,8 +1,12 @@
-## Running the Application with Docker Compose
-
 You can build and run the application in detached mode using Docker Compose. Simply copy the command below and run it in your terminal.
 
-### Command:
-
+### Command
 #!/bin/bash
-docker-compose up -d --build
+docker-compose down
+if [ $(docker images -q --filter "reference=mern_app_image") ]; then
+    echo "Container exists. Deleting it"
+    docker rmi -f $(docker images -q --filter "reference=mern_app_image")
+else
+    echo "Image not found"
+fi
+docker-compose up -d --build
